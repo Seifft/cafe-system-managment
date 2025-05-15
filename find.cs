@@ -20,6 +20,10 @@ namespace cafe_system_managment
 
 
             {
+                if (dgvfare.CurrentRow == null)
+                {
+                    return;
+                }
                 string name = dgvfare.CurrentRow.Cells[0].Value.ToString();
                 decimal price = decimal.Parse(dgvfare.CurrentRow.Cells[1].Value.ToString());
                 int quantity = int.Parse(dgvfare.CurrentRow.Cells[2].Value.ToString());
