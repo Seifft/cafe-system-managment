@@ -33,7 +33,6 @@
             tbmenumangment = new TabPage();
             btnfind = new Button();
             btndeletealltextbox = new Button();
-            btndeleteallrows = new Button();
             txtnewquantity = new TextBox();
             labnewstock = new Label();
             btnstock = new Button();
@@ -105,7 +104,6 @@
             // 
             tbmenumangment.Controls.Add(btnfind);
             tbmenumangment.Controls.Add(btndeletealltextbox);
-            tbmenumangment.Controls.Add(btndeleteallrows);
             tbmenumangment.Controls.Add(txtnewquantity);
             tbmenumangment.Controls.Add(labnewstock);
             tbmenumangment.Controls.Add(btnstock);
@@ -147,16 +145,6 @@
             btndeletealltextbox.Text = "delete all text box";
             btndeletealltextbox.UseVisualStyleBackColor = true;
             btndeletealltextbox.Click += btndeletealltextbox_Click;
-            // 
-            // btndeleteallrows
-            // 
-            btndeleteallrows.Location = new Point(451, 371);
-            btndeleteallrows.Name = "btndeleteallrows";
-            btndeleteallrows.Size = new Size(136, 39);
-            btndeleteallrows.TabIndex = 25;
-            btndeleteallrows.Text = "delete all rows";
-            btndeleteallrows.UseVisualStyleBackColor = true;
-            btndeleteallrows.Click += btndeleteallrows_Click;
             // 
             // txtnewquantity
             // 
@@ -675,7 +663,6 @@
         private Button btnstock;
         private Label labnewstock;
         private TextBox txtnewquantity;
-        private Button btndeleteallrows;
         private Button btndeletealltextbox;
         private Label labnumorder;
         private Label labdate;

@@ -481,12 +481,12 @@ namespace cafe_system_managment
 
         private void btndeleteall_Click(object sender, EventArgs e)
         {
-            delete.deletetrow(txtinvoiceprice, txtinvoicequantity, dgvproduct, txtoverall,txtdiscount);
+            delete.deletedgvprocutrow(dgvproduct);
         }
 
         private void btndeleteall_Click_1(object sender, EventArgs e)
         {
-            delete.deletetallpageinvoice(dgvproduct, txtinvoiceprice, txtinvoicequantity,txtcustomername);
+            delete.deleteallpageinvoice(txtinvoiceprice, txtinvoicequantity, dgvproduct, txtoverall, txtdiscount,txtcustomername);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -565,7 +565,7 @@ namespace cafe_system_managment
 
             dgvproduct.DataSource = null; 
            
-            delete.deletetrow(txtinvoiceprice, txtinvoicequantity, dgvproduct, txtoverall,txtdiscount);
+            delete.deleteallpageinvoice(txtinvoiceprice, txtinvoicequantity, dgvproduct, txtoverall,txtdiscount, txtcustomername);
             txtcustomername.Focus();
             
 
@@ -614,7 +614,7 @@ namespace cafe_system_managment
 
             e.Graphics.DrawString("Overall", f, Brushes.Red, margin + colThreeWidth + 10, preHeights + 15);
 
-            // Invoice Content :
+            
             float rowsHeight = 60;
 
             for (int x = 0; x < dgvproduct.Rows.Count; x += 1)

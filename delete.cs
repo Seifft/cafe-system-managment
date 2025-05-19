@@ -19,7 +19,7 @@ namespace cafe_system_managment
 
         public static void DeleteFromcombobox(List<product2> productlist, ComboBox cbxproduct, BindingSource bs, string searchname, TextBox txtname, TextBox txtprice, TextBox txtquantity, TextBox txtinvoiceprice)
         {
-            
+
             var foundItem = productlist.FirstOrDefault(item => item.name == searchname);
             if (foundItem != null)
             {
@@ -49,7 +49,7 @@ namespace cafe_system_managment
             txtquantity.Clear();
 
         }
-        public static void deletetrow(TextBox txtinvoiceprice, TextBox txtinvoicequantity, DataGridView dgvproduct,TextBox txtoverall, TextBox txtdiscount)
+        public static void deleteallpageinvoice(TextBox txtinvoiceprice, TextBox txtinvoicequantity, DataGridView dgvproduct, TextBox txtoverall, TextBox txtdiscount, TextBox txtcustomername)
         {
             foreach (DataGridViewRow row in dgvproduct.Rows)
             {
@@ -58,31 +58,15 @@ namespace cafe_system_managment
 
             }
             txtinvoiceprice.Clear();
+            txtcustomername.Clear();
             txtdiscount.Clear();
             dgvproduct.Rows.Clear();
             datadgvproduct data = new datadgvproduct("", 0, 0, 0);
             txtinvoicequantity.Clear();
             txtoverall.Clear();
         }
-        public static void deletetallpageinvoice(DataGridView dgvproduct, TextBox txtinvoiceprice,TextBox txtinvoicequantity,TextBox txtcustomername)
-        {
-            for (int i = dgvproduct.Rows.Count - 1; i >= 0; i--)
-            {
 
-
-                dgvproduct.Rows.RemoveAt(i);
-
-            }
-
-
-            dgvproduct.Rows.Clear();
-            txtinvoiceprice.Clear();
-            txtinvoicequantity.Clear();
-            txtcustomername.Clear();
-
-
-        }
-        public static void DeleteLineFromFile(string filename, string searchname,TextBox txtname)
+        public static void DeleteLineFromFile(string filename, string searchname, TextBox txtname)
         {
             List<string> lines = File.ReadAllLines(filename).ToList();
 
@@ -95,12 +79,22 @@ namespace cafe_system_managment
                     break;
                 }
             }
-           
-            
+
+
 
             File.WriteAllLines(filename, lines);
         }
-
+        public static void deletedgvprocutrow(DataGridView dgvproduct)
+        {
+            if (dgvproduct.CurrentRow != null)
+            {
+                dgvproduct.Rows.RemoveAt(dgvproduct.CurrentRow.Index);
+            }
+            else
+            {
+                MessageBox.Show("No row selected to delete.");
+            }
+        }
     }
 }
     

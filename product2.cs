@@ -29,10 +29,7 @@ namespace cafe_system_managment
         {
             return name;
         }
-       /* public override string ToString()
-        {
-            return $"{name};{price};{quantity}";
-        }*/
+       
 
     }
 }
